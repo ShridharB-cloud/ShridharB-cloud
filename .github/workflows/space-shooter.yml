@@ -1,5 +1,8 @@
 name: Update Space Shooter Game
 on:
+  push: # Trigger on push so it runs immediately for you
+    branches:
+      - main
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight
   workflow_dispatch:     # Allows you to run it manually
