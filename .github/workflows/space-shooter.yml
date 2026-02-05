@@ -1,28 +1,28 @@
-name: Update Space Shooter Game
+name: Update Space Shooter GIF
 on:
-  push: # Trigger on push so it runs immediately for you
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push: # Added push trigger for immediate execution
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
-  workflow_dispatch:     # Allows you to run it manually
 permissions:
   contents: write
 jobs:
-  update-game:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Generate Game GIF
-        uses: czl9707/gh-space-shooter@v1
+      - name: Create assets directory
+        run: mkdir -p assets
+      - uses: czl9707/gh-space-shooter@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          username: ShridharB-cloud
-          output-path: 'gh-space-shooter.gif'
-          strategy: 'random'
-          
+          output-path: assets/space-shooter.gif
+          strategy: random
+      
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update space shooter game stats"
-          file_pattern: 'gh-space-shooter.gif'
+          file_pattern: 'assets/space-shooter.gif'
