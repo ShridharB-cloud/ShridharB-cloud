@@ -16,3 +16,8 @@ Final-year AIML student with growing skills in Java, Python, and basic web devel
 [![](https://visitcount.itsvg.in/api?id=ShridharB-cloud&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+<div align="center">
+  <h2>🚀 My Contribution Space Shooter</h2>
+  <img src="https://github.com/ShridharB-cloud/ShridharB-cloud/blob/main/gh-space-shooter.gif?raw=true" alt="My GitHub Space Shooter Game" width="100%" />
+</div>
